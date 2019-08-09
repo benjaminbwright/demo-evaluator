@@ -2,11 +2,16 @@
 var express = require('express');
 var app = express();
 
+// import router
+var routes = require('./routes')
+
+// start dotenv for dynamic variables
 require('dotenv').config()
 
 // Set the port (need to add environment variable)
 var PORT = process.env.PORT;
 
+app.use("/", routes)
 // Put this in s routes folder
 app.get("/",(req, res) => {
   res.send("The home page.");
