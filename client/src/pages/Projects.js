@@ -10,11 +10,11 @@ function ProjectListItem() {
       </li>
       <li>
         <h3>Project 2</h3>
-        <p><Link to={`/project/2/evaluate`}>Some info about project 1</Link></p>
+        <p><Link to={`/project/2/evaluate`}>Some info about project 2</Link></p>
       </li>
       <li>
         <h3>Project 3</h3>
-        <p><Link to={`/project/3/evaluate`}>Some info about project 1</Link></p>
+        <p><Link to={`/project/3/evaluate`}>Some info about project 3</Link></p>
       </li>
     </div>
   );
