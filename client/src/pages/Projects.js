@@ -1,38 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ProjectListItem() {
+function ProjectListItem({project}) {
   return(
     <div>
+      
       <li>
-        <h3>Project 1</h3>
-        <p><Link to={`/project/1/evaluate`}>Some info about project 1</Link></p>
-      </li>
-      <li>
-        <h3>Project 2</h3>
-        <p><Link to={`/project/2/evaluate`}>Some info about project 2</Link></p>
-      </li>
-      <li>
-        <h3>Project 3</h3>
-        <p><Link to={`/project/3/evaluate`}>Some info about project 3</Link></p>
+        <h3>{project.name}</h3>
+        <p><Link to={`/project/${project.id}/evaluate`}>Some info about {project.name}</Link></p>
       </li>
     </div>
   );
 }
 
-function ProjectList() {
+function ProjectList({projects}) {
   return(
     <ul>
-      <ProjectListItem />
+      {projects.map((project, index) => (
+        <ProjectListItem key={index} project={project} />
+      ))}
+      
     </ul>
   );
 }
 
-export default function Projects() {
+export default function Projects(props) {
   return(
     <div className="container">
       <h1>Projects Up For Evaluation</h1>
-      <ProjectList />
+      <ProjectList {...props} />
       <p>You'll be able to pick a project to evaluate.</p>
     </div>
   );
