@@ -1,19 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProjectListItem() {
   return(
     <div>
       <li>
         <h3>Project 1</h3>
-        <p>Some info about project 1</p>
+        <p><Link to={`/project/1/evaluate`}>Some info about project 1</Link></p>
       </li>
       <li>
         <h3>Project 2</h3>
-        <p>Some info about project 2</p>
+        <p><Link to={`/project/2/evaluate`}>Some info about project 1</Link></p>
       </li>
       <li>
         <h3>Project 3</h3>
-        <p>Some info about project 3</p>
+        <p><Link to={`/project/3/evaluate`}>Some info about project 1</Link></p>
       </li>
     </div>
   );

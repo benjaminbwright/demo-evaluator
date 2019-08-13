@@ -2,8 +2,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+// import styles
+import './App.css'
+
 // import pages
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 //import components
 import HeaderNav from './components/HeaderNav'
@@ -13,17 +17,6 @@ function Welcome() {
     <div>
       <h1>Welcome to the project evaluator</h1>
       <p>You'll be able to login or register here. If you cant' </p>
-    </div>
-  );
-}
-
-function Project() {
-  return(
-    <div>
-      <h1>Project Detail Page</h1>
-      <p>This is the project detail page.</p>
-      <p>You'll be able to pick a project to evaluate.</p>
-      <button>Evaluate</button>
     </div>
   );
 }
@@ -47,7 +40,7 @@ function App() {
         <HeaderNav />
         <Route exact path="/" component={Welcome} />
         <Route exact path="/projects" component={Projects} />
-        <Route exact path="/project/:id" component={Project} />
+        <Route exact path="/project/:id" component={ProjectDetail} />
         <Route exact path="/project/:id/evaluate" component={Evaluation} />
       </Router>
     </div>
