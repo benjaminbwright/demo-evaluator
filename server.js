@@ -20,10 +20,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Setup mongoos connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project-evaluator");
 
 app.use("/", routes)
 // Put this in s routes folder
+
 app.get("/",(req, res) => {
   res.send("The home page.");
 });
