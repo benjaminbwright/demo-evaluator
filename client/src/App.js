@@ -1,6 +1,6 @@
 // import dependencies
-import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 // import styles
 import './App.css'
@@ -33,19 +33,34 @@ function Evaluation() {
   );
 }
 
-function App() {
-  return (
-    <div>     
-      <Router>
-        <HeaderNav />
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/projects" component={Projects} />
-        <Route exact path="/project/:id" component={ProjectDetail} />
-        <Route exact path="/project/:id/evaluate" component={Evaluation} />
-      </Router>
-    </div>
-
+function NoMatch() {
+  return(
+    <div>Sorry. Page not found.</div>
   );
+}
+
+class App extends Component {
+
+  state = {
+
+  }
+
+  render() {
+    return(
+      <div>     
+        <Router>
+          <HeaderNav />
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/project/:id" component={ProjectDetail} />
+            <Route exact path="/project/:id/evaluate" component={Evaluation} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
