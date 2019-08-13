@@ -45,3 +45,8 @@ h6 {
     font-size: 0.75em;
     /* 0.75*16 = 12 */
 }
+
+p {
+    line-height: 1.5;
+    margin: 0 0 1em;
+}
