@@ -14,7 +14,7 @@ import HeaderNav from './components/HeaderNav'
 
 function Welcome() {
   return(
-    <div>
+    <div className="container">
       <h1>Welcome to the project evaluator</h1>
       <p>You'll be able to login or register here. If you cant' </p>
     </div>
@@ -42,6 +42,12 @@ function NoMatch() {
 class App extends Component {
 
   state = {
+    projects: [
+      {
+        id: 1,
+        name: "The best project"
+      }
+    ]
 
   }
 
@@ -52,7 +58,7 @@ class App extends Component {
           <HeaderNav />
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/projects" render={() => <Projects projects={this.state.projects} />} />
             <Route exact path="/project/:id" component={ProjectDetail} />
             <Route exact path="/project/:id/evaluate" component={Evaluation} />
             <Route component={NoMatch} />
