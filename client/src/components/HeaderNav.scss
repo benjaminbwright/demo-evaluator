@@ -4,9 +4,14 @@
     ul {
         list-style-type: none;
         margin: 0;
+        width: 50%;
+        position: absolute;
+        right: 5%
     }
     li {
         color: #ffffff;
+        float: left;
+        padding: 0 1em;
         a {
             color: #ffffff;
         }
