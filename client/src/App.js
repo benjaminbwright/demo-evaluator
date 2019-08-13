@@ -8,18 +8,10 @@ import './App.css'
 // import pages
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
+import Welcome from './pages/Welcome';
 
 //import components
 import HeaderNav from './components/HeaderNav'
-
-function Welcome() {
-  return(
-    <div className="container">
-      <h1>Welcome to the project evaluator</h1>
-      <p>You'll be able to login or register here. If you cant' </p>
-    </div>
-  );
-}
 
 function Evaluation() {
   return(
